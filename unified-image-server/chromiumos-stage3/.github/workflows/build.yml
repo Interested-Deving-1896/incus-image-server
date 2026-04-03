@@ -45,6 +45,7 @@ jobs:
           sudo apt-get install -y qemu-user-static
 
       - name: Build stage3
+        working-directory: unified-image-server/chromiumos-stage3
         run: sudo ./build.sh --board ${{ matrix.board }} --jobs 4 --output .
         timeout-minutes: 480
 
@@ -53,7 +54,7 @@ jobs:
         with:
           tag_name: ${{ env.CHROMIUMOS_SHORT_VERSION }}-${{ github.run_id }}
           name: ChromiumOS Stage3 ${{ env.CHROMIUMOS_SHORT_VERSION }}
-          files: chromiumos-stage3-${{ matrix.board }}-*.tar.xz
+          files: unified-image-server/chromiumos-stage3/chromiumos-stage3-${{ matrix.board }}-*.tar.xz
           draft: false
           prerelease: false
         env:

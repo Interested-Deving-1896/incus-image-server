@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'manifests/**'
+      - 'unified-image-server/manifests/**'
   schedule:
     - cron: '0 3 * * 1'   # Monday 03:00 UTC
   workflow_dispatch:
@@ -90,9 +90,9 @@ jobs:
           DISTRO="${{ matrix.distro }}"
           if [[ "$DISTRO" == gentoo-* ]]; then
             VARIANT="${DISTRO#gentoo-}"   # ctr-openrc, ctr-systemd, etc.
-            echo "path=manifests/gentoo/${VARIANT}.yaml" >> "$GITHUB_OUTPUT"
+            echo "path=unified-image-server/manifests/gentoo/${VARIANT}.yaml" >> "$GITHUB_OUTPUT"
           else
-            echo "path=manifests/${DISTRO}.yml" >> "$GITHUB_OUTPUT"
+            echo "path=unified-image-server/manifests/${DISTRO}.yml" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Build image
@@ -143,12 +143,12 @@ jobs:
           mkdir -p /tmp/image-output
           if [ -n "${{ matrix.board }}" ]; then
             # ChromiumOS wrapper: board determines arch
-            bash manifests/bin/${{ matrix.script }} \
+            bash unified-image-server/manifests/bin/${{ matrix.script }} \
               --board ${{ matrix.board }} \
               --output /tmp/image-output
           else
             # Talos wrapper: arch is explicit
-            bash manifests/bin/${{ matrix.script }} \
+            bash unified-image-server/manifests/bin/${{ matrix.script }} \
               --arch ${{ matrix.arch }} \
               --output /tmp/image-output
           fi
