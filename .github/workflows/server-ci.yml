@@ -8,14 +8,14 @@ on:
       - 'feature/**'
       - 'hotfix/**'
     paths:
-      - 'server/**'
+      - 'unified-image-server/server/**'
   pull_request:
     paths:
-      - 'server/**'
+      - 'unified-image-server/server/**'
 
 defaults:
   run:
-    working-directory: server
+    working-directory: unified-image-server/server
 
 jobs:
   deps:
