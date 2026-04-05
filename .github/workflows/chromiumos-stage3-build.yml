@@ -48,7 +48,7 @@ jobs:
 
       - name: Build stage3
         working-directory: unified-image-server/chromiumos-stage3
-        run: sudo ./build.sh --board ${{ matrix.board }} --jobs 4 --output .
+        run: sudo ./build.sh --board "${{ matrix.board }}" --jobs 4 --output .
         timeout-minutes: 480
 
       - name: Upload release artifact
