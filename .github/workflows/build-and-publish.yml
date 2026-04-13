@@ -98,7 +98,11 @@ jobs:
       - name: Build image
         run: |
           mkdir -p /tmp/image-output
-          sudo losetup -f  # Find a free loop device
+          LOOP_DEVICE=$(sudo losetup -f)  # Find a free loop device
+          if [ -z "$LOOP_DEVICE" ]; then
+            echo "No free loop device available."
+            exit 1
+          fi
           sudo distrobuilder build-incus "${{ steps.manifest.outputs.path }}" \
             -o image.architecture=${{ matrix.arch }} \
             --type unified \
