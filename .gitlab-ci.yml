@@ -140,3 +140,22 @@ publish-images:
     description: 'Automated image build'
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
+
+# ── Always-on lint (validates manifests on every push) ────────────────────────
+lint:
+  stage: test
+  image: python:3.12-alpine
+  before_script:
+    - pip install pyyaml -q
+  script:
+    - |
+      failed=0
+      for f in $(find unified-image-server/manifests -name "*.yml" -o -name "*.yaml" 2>/dev/null); do
+        python3 -c "import yaml, sys; yaml.safe_load(open('$f'))" \
+          && echo "OK:   $f" \
+          || { echo "FAIL: $f"; failed=1; }
+      done
+      exit $failed
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH =~ /^(main|develop)$/'
