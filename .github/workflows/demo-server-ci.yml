@@ -65,7 +65,7 @@ jobs:
           go-version: '1.21'
       - name: Clone and build incus-demo-server
         run: |
-          git clone --depth 1 https://github.com/lxc/incus-demo-server.git /tmp/incus-demo-server
+          git clone --depth 1 https://gitlab.com/openos-project/upstream-mirrors/incus-demo-server.git /tmp/incus-demo-server
           cd /tmp/incus-demo-server
           go build ./cmd/incus-demo-server/
           echo "Build succeeded: $(./incus-demo-server --help 2>&1 | head -1 || true)"
