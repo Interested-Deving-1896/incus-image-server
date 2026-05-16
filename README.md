@@ -1,65 +1,75 @@
+[update-readmes]   Mode: rewrite — migrating to template structure...
 # incus-image-server
 
-A unified simplestreams image server for LXC/LXD/Incus, with a multi-distro
-build pipeline and live-ISO remastering support.
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/incus-image-server)
 
-## Structure
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
+
+## Architecture
+
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
+
+## Install
+
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
+
+```bash
+git clone https://github.com/Interested-Deving-1896/incus-image-server.git
+cd incus-image-server
+```
+
+## Usage
+
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
+
+## Configuration
+
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/incus-image-server`](https://github.com/Interested-Deving-1896/incus-image-server) and mirrored through:
 
 ```
-incus-image-server/
-├── server/              # Elixir/Phoenix simplestreams server (polar base)
-├── manifests/           # Distrobuilder YAMLs + wrapper scripts
-├── chromiumos-stage3/   # Arch-agnostic ChromiumOS stage3 builder
-├── penguins-eggs/       # ChromiumOS family support for penguins-eggs
-└── demo-server/         # Deployment wrapper for incus-demo-server
-    ├── config/          # Site-local configuration template
-    ├── systemd/         # systemd service unit
-    ├── scripts/         # install.sh and setup-incus.sh
-    └── README.md
+Interested-Deving-1896/incus-image-server  ──►  OpenOS-Project-OSP/incus-image-server  ──►  OpenOS-Project-Ecosystem-OOC/incus-image-server
 ```
 
-## Components
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
-### server/
-Phoenix application serving the simplestreams protocol for LXC, LXD, and Incus.
-- Multi-tenant spaces with per-space credential generation
-- Storage-backend agnostic: S3/S3-compatible or local filesystem
-- Direct multipart upload endpoint alongside CI/CD publish pipeline
-- No architecture or distro constraints in the data model
+## Contributors
 
-### manifests/
-Distrobuilder YAML manifests and wrapper scripts covering:
-- Debian, Ubuntu, Devuan, Alpine, Arch Linux
-- Fedora, AlmaLinux, Rocky Linux, openSUSE
-- Gentoo (OpenRC + systemd, container + VM)
-- ChromiumOS (via stage3 wrapper script)
-- Talos Linux (VM only, via wrapper script)
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
 
-### chromiumos-stage3/
-Parameterized ChromiumOS stage3 builder derived from sebanc/chromiumos-stage3.
-Supports amd64 (`reven` board) and arm64 (generic + hardware-specific boards
-from openFyde). Board configurations are in `boards/`.
+## Origins
 
-### penguins-eggs/
-ChromiumOS family backend for penguins-eggs live-ISO remastering tool.
-Covers package management via Portage + Chromebrew, derivative detection,
-and browser flavour selection.
+<!-- AI:start:origins -->
+_No dependency graph found. Run `generate-dep-graph.yml` to generate `dep-graph/origins.md`._
+<!-- AI:end:origins -->
 
-### demo-server/
-Deployment wrapper for [incus-demo-server](https://github.com/lxc/incus-demo-server),
-the backend powering the Incus online try-it service. Provides a config
-template, systemd unit, and install/setup scripts.
+## Resources
 
-See [demo-server/README.md](demo-server/README.md) for setup instructions.
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
 
-## Sources
+## License
 
-| Component | Upstream |
-|---|---|
-| server | upmaru/polar |
-| server upload | Hye-Ararat/Image-Server |
-| manifests/ubuntu.yml | f-bn/incus-images |
-| manifests/gentoo/ | liangyongxiang/my-gentoo-incus-scripts |
-| chromiumos-stage3 (amd64) | sebanc/chromiumos-stage3 |
-| chromiumos-stage3 (arm64) | openFyde overlays |
-| penguins-eggs distro matrix | openos-project/penguins-eggs |
+<!-- AI:start:license -->
+<!-- License not detected — add a LICENSE file to this repo. -->
+<!-- AI:end:license -->
