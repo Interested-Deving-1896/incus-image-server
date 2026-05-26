@@ -137,7 +137,7 @@ jobs:
         run: pip install pytest --quiet
 
       - name: Run tests
-        run: python3 -m pytest tests/ -v --tb=short
+        run: python3 -m pytest -v --tb=short
 
       - name: Write summary
         if: always()
