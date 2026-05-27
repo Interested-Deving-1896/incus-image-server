@@ -34,7 +34,9 @@ concurrency:
   cancel-in-progress: false  # Never cancel mid-creation
 
 permissions:
-  contents: write
+  contents: 
+    read: true
+    write: true
 
 jobs:
   create:
