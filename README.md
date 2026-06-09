@@ -74,7 +74,6 @@ Original project — unified simplestreams image server for LXC/LXD/Incus with m
 | File | Description |
 |---|---|
 | [dep-graph/origins.md](https://github.com/Interested-Deving-1896/incus-image-server/blob/main/dep-graph/origins.md) | Dependency graph (Markdown table) |
-| [config/gitlab-subgroups.yml](https://github.com/Interested-Deving-1896/incus-image-server/blob/main/config/gitlab-subgroups.yml) | GitLab subgroup map |
 <!-- AI:end:resources -->
 
 ## License
