@@ -103,6 +103,7 @@ jobs:
             echo "No free loop device available."
             exit 1
           fi
+          sudo losetup "$LOOP_DEVICE" /tmp/tmp.NV625gXnsv/metal.raw  # Set up loop device
           sudo distrobuilder build-incus "${{ steps.manifest.outputs.path }}" \
             -o image.architecture=${{ matrix.arch }} \
             --type unified \
