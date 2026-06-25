@@ -87,13 +87,7 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 ## Origins
 
 <!-- AI:start:origins -->
-
-Original project — unified simplestreams image server for LXC/LXD/Incus with multi-distro build pipeline.
-
-| Origin | Host | Fork in I-D-1896 |
-|--------|------|-----------------|
-| [lxc/incus](https://github.com/lxc/incus) | GitHub | ✅ |
-| [lxc/distrobuilder](https://github.com/lxc/distrobuilder) | GitHub | ✅ |
+_Original project — no upstream fork._
 <!-- AI:end:origins -->
 
 ## Resources
@@ -107,5 +101,5 @@ Original project — unified simplestreams image server for LXC/LXD/Incus with m
 ## License
 
 <!-- AI:start:license -->
-[GPL-3.0](https://github.com/Interested-Deving-1896/incus-image-server/blob/main/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- License not detected — add a LICENSE file to this repo. -->
 <!-- AI:end:license -->
