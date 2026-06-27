@@ -57,4 +57,5 @@ jobs:
             echo "Error: GITLAB_TOKEN is required"
             exit 1
           fi
+          echo "GITLAB_TOKEN is set, proceeding with sync..."
           bash scripts/sync-from-gitlab.sh
