@@ -109,6 +109,8 @@ Original project — unified simplestreams image server for LXC/LXD/Incus with m
 | [dep-graph/origins.md](https://github.com/Interested-Deving-1896/incus-image-server/blob/main/dep-graph/origins.md) | Dependency graph (Markdown table) |
 <!-- AI:end:resources -->
 
+## Accessibility
+
 <!-- AI:start:accessibility -->
 This repo uses automated accessibility auditing via `check-accessibility.yml`.
 
